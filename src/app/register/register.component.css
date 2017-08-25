@@ -1,0 +1,12 @@
+.example-form {
+  width: 400px; 
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.sign-up-header-image {
+  background-image: url('../../assets/img/sign-up.png');
+  background-size: cover;
+}

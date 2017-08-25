@@ -1,0 +1,45 @@
+<md-toolbar color="primary">
+
+  <span>Couchbase User Profile Demo</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu" style="text-align: right">
+    <md-icon>menu</md-icon></button>
+
+</md-toolbar>
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+    <md-card class="example-card">
+      <md-card-header>
+        <div md-card-avatar class="sign-up-header-image"></div>
+        <md-card-title > Register</md-card-title>
+        <md-card-subtitle>(or Login)</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+    <form class="example-form">
+         
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="First Name" name="firstname" [(ngModel)]="input.firstname">
+            </md-input-container>
+        
+            <md-input-container class="example-full-width">
+              <input mdInput placeholder="Last Name" name="lastname" [(ngModel)]="input.lastname">
+            </md-input-container>
+
+             <md-input-container class="example-full-width">
+               <input mdInput placeholder="Email" name="email" [(ngModel)]="input.email">
+             </md-input-container>
+
+             <md-input-container class="example-full-width">
+               <input mdInput placeholder="Password" type="password" name="password" [(ngModel)]="input.password">
+             </md-input-container>
+    </form>
+      </md-card-content>
+      <md-card-actions>
+<button md-raised-button (click)="register()">Register</button>
+        <a md-button [routerLink]="['/login']">Login</a>
+      </md-card-actions>
+    </md-card>
+

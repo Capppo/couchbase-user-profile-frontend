@@ -1,0 +1,48 @@
+<md-toolbar color="primary">
+
+  <span>Couchbase User Profile Demo</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu" style="text-align: right">
+    <md-icon>menu</md-icon></button>
+
+</md-toolbar>
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item [routerLink]="['/login']">Logout</button> 
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+<md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title><h1>{{display_name}} Blog</h1></md-card-title>
+    <md-card-subtitle>{{email}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="create()">New</button> |
+    <button md-button [routerLink]="['/login']">Logout</button> |
+    <button md-button (click)="deleteAccount(pid)">Delete Account</button> 
+  </md-card-actions>
+</md-card>
+
+<br />
+
+<div *ngFor="let entry of entries; let i = index">
+
+<md-card class="example-card" >
+  <md-card-content>
+    <h2>{{ entry.title }}</h2>
+    <h4>{{entry.timestamp | date:'medium'}}</h4>
+    <img md-card-image src="{{ entry.image_url }}">
+    <p>{{ entry.content }}</p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="edit(i)">Edit</button> |
+    <button md-button (click)="delete(entry.id)">Delete</button>
+  </md-card-actions>
+</md-card>
+
+<br />
+</div>

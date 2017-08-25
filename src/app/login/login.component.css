@@ -1,0 +1,17 @@
+.example-card {
+   width: 400px; 
+}
+
+.sign-in-header-image {
+  background-image: url('../../assets/img/sign-in.png');
+  background-size: cover;
+}
+
+.accounts-header-image {
+  background-image: url('../../assets/img/login_icon.png');
+  background-size: cover;
+}
+
+.example-full-width {
+  width: 100%;
+}

@@ -1,0 +1,50 @@
+
+<md-toolbar color="primary">
+
+  <span>Couchbase User Profile Demo</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu" style="text-align: right">
+    <md-icon >menu</md-icon></button>
+
+</md-toolbar>
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+    <md-card class="example-card">
+      <md-card-header>
+        <div md-card-avatar class="sign-in-header-image"></div>
+        <md-card-title >Sign In</md-card-title>
+        <md-card-subtitle>(or Register)</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <p>
+          <md-input-container class="example-full-width">
+            <input mdInput placeholder="Email" value="" name="email" [(ngModel)]="input.email">
+          </md-input-container>
+          <br />
+          <md-input-container class="example-full-width">
+            <input mdInput placeholder="Password" value="" name="password" [(ngModel)]="input.password">
+          </md-input-container>
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-raised-button (click)="login()">Login</button>
+        <a md-button [routerLink]="['/register']">Register</a>
+      </md-card-actions>
+    </md-card>
+<br />
+
+<md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="accounts-header-image"></div>
+    <md-card-title >Available accounts</md-card-title>
+    <md-card-subtitle>(tap to choose)</md-card-subtitle>
+  </md-card-header> 
+  <md-card-content>
+    <md-list *ngFor="let item of accounts" (click)="itemTapped($event, item)">
+      <md-list-item>{{item.email}}</md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>

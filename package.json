@@ -1,5 +1,5 @@
 {
-  "name": "profile-project-angular",
+  "name": "couchbase-user-profile-frontend",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -12,12 +12,15 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animation": "^4.0.0-beta.8",
     "@angular/animations": "^4.0.0",
+    "@angular/cdk": "github:angular/cdk-builds",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
+    "@angular/core": "^4.0.0-beta.8",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
+    "@angular/material": "github:angular/material2-builds",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",

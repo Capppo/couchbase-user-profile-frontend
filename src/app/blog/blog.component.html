@@ -1,0 +1,52 @@
+<md-toolbar color="primary">
+
+  <span>Couchbase User Profile Demo</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu" style="text-align: right">
+    <md-icon>menu</md-icon></button>
+
+</md-toolbar>
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+<md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title><h1>{{display_name}} {{label.title}} Blog</h1></md-card-title>
+    <md-card-subtitle>{{email}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="navigator('blogs')">Blogs</button> |
+    <button md-button [routerLink]="['/login']">Logout</button>
+  </md-card-actions>
+</md-card>
+<br />
+ <md-card class="example-card">
+   <md-card-content>
+    <form class="example-form">
+        
+    <p>
+    <md-input-container class="example-full-width">
+      <textarea mdInput name="title" [(ngModel)]="input.title" placeholder="Title" ></textarea>
+    </md-input-container>
+    <md-input-container class="example-full-width">
+      <textarea mdInput name="content" [(ngModel)]="input.content" placeholder="Content" ></textarea>
+    </md-input-container>
+    <md-input-container class="example-full-width">
+      <textarea mdInput name="image_url" [(ngModel)]="input.image_url" placeholder="Image Url" ></textarea>
+    </md-input-container>
+  </p>
+
+
+    <button md-raised-button (click)="save()">{{label.button}}</button>
+    </form>
+    </md-card-content>
+ </md-card>
+
+
+
+
